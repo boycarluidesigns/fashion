@@ -1307,7 +1307,7 @@
 
 <!-- Navbar -->
 <nav id="navbar">
-  <button id="mobileMenuBtn" class="mobile-menu-btn" onclick="openMobileMenu()" aria-label="Menu">
+  <button id="mobileMenuBtn" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
     <span class="burger-line"></span>
     <span class="burger-line"></span>
     <span class="burger-line"></span>
@@ -2207,6 +2207,14 @@
     document.getElementById('mobileMenu').classList.remove('open');
     const button = document.getElementById('mobileMenuBtn');
     if (button) button.classList.remove('open');
+  }
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    if (menu && menu.classList.contains('open')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   }
 
   document.addEventListener('keydown', (event) => {
