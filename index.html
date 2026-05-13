@@ -1780,7 +1780,7 @@
       signInBtn.title = userProfile.displayName || userProfile.email;
       signInBtn.setAttribute('aria-label', 'Profile');
       if (profileMenuUser) {
-        profileMenuUser.textContent = `Hi, ${userProfile.displayName ? userProfile.displayName.split(' ')[0] : 'User'}`;
+        profileMenuUser.textContent = `Hi, ${userProfile.displayName || 'User'}`;
       }
     } else {
       signInBtn.textContent = 'Sign In';
